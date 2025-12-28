@@ -1,0 +1,192 @@
+[
+    {
+        "id": 1,
+        "products": [
+            {
+                "id": 1,
+                "name": "Café The Alexandra",
+                "price": 2.9
+            },
+            {
+                "id": 1,
+                "name": "Café The Alexandra",
+                "price": 2.9
+            }
+        ],
+        "total": 5.8,
+        "created_at": "2025-12-25T22:49:57.325812"
+    },
+    {
+        "sale_id": 2,
+        "products": [
+            {
+                "name": "Café The Alexandra",
+                "price": 2.9
+            },
+            {
+                "name": "Café Americano",
+                "price": 1.5
+            },
+            {
+                "name": "Café The Alexandra",
+                "price": 2.9
+            },
+            {
+                "name": "Café Americano",
+                "price": 1.5
+            },
+            {
+                "name": "Café The Alexandra",
+                "price": 2.9
+            },
+            {
+                "name": "Café Americano",
+                "price": 1.5
+            },
+            {
+                "name": "Café Americano",
+                "price": 1.5
+            },
+            {
+                "name": "Café The Alexandra",
+                "price": 2.9
+            },
+            {
+                "name": "Café Americano",
+                "price": 1.5
+            },
+            {
+                "name": "Café The Alexandra",
+                "price": 2.9
+            }
+        ],
+        "total": 22.0
+    },
+    {
+        "sale_id": 3,
+        "products": [
+            {
+                "name": "Café The Alexandra",
+                "price": 2.9
+            },
+            {
+                "name": "Café The Alexandra",
+                "price": 2.9
+            },
+            {
+                "name": "Café Americano",
+                "price": 1.5
+            }
+        ],
+        "total": 7.3
+    },
+    {
+        "sale_id": 4,
+        "date": "2025-12-26T10:46:07.089746",
+        "items": [
+            {
+                "name": "Café The Alexandra",
+                "price": 2.9
+            },
+            {
+                "name": "Café Americano",
+                "price": 1.5
+            }
+        ],
+        "total": 4.4
+    },
+    {
+        "sale_id": 5,
+        "date": "2025-12-26T11:16:41.850032",
+        "items": [
+            {
+                "name": "Café The Alexandra",
+                "price": 2.9
+            },
+            {
+                "name": "Café The Alexandra",
+                "price": 2.9
+            },
+            {
+                "name": "Café Americano",
+                "price": 1.5
+            }
+        ],
+        "total": 7.3
+    },
+    {
+        "sale_id": 6,
+        "date": "2025-12-26T11:31:48.621468",
+        "items": [
+            {
+                "name": "Café The Alexandra",
+                "price": 2.9
+            },
+            {
+                "name": "Café The Alexandra",
+                "price": 2.9
+            },
+            {
+                "name": "Café The Alexandra",
+                "price": 2.9
+            }
+        ],
+        "total": 8.7
+    },
+    {
+        "sale_id": 7,
+        "date": "2025-12-26T11:39:10.274454",
+        "items": [
+            {
+                "name": "Café The Alexandra",
+                "price": 2.9
+            },
+            {
+                "name": "Café The Alexandra",
+                "price": 2.9
+            },
+            {
+                "name": "Café The Alexandra",
+                "price": 2.9
+            }
+        ],
+        "total": 8.7
+    },
+    {
+        "sale_id": 8,
+        "date": "2025-12-26T11:43:51.927813",
+        "items": [
+            {
+                "name": "Café The Alexandra",
+                "price": 2.9
+            }
+        ],
+        "total": 2.9
+    },
+    {
+        "sale_id": 9,
+        "date": "2025-12-26T12:05:08.171922",
+        "items": [
+            {
+                "name": "Café The Alexandra",
+                "price": 2.9
+            }
+        ],
+        "total": 2.9
+    },
+    {
+        "sale_id": 10,
+        "date": "2025-12-27T16:23:06.765670",
+        "items": [
+            {
+                "name": "Café The Alexandra",
+                "price": 2.9
+            },
+            {
+                "name": "Café Americano",
+                "price": 1.5
+            }
+        ],
+        "total": 4.4
+    }
+]
