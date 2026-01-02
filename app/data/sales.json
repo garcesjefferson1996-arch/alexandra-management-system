@@ -326,5 +326,30 @@
         ],
         "total": 5.4,
         "timestamp": "2026-01-02T13:40:54.275460"
+    },
+    {
+        "sale_id": 21,
+        "items": [
+            {
+                "name": "Dona",
+                "price": 0.99
+            },
+            {
+                "name": "The Alexandra",
+                "price": 2.9
+            }
+        ],
+        "total": 3.89,
+        "timestamp": "2026-01-02T17:09:20.365976",
+        "customer": {
+            "name": "Jefferson Garcés",
+            "document": "1804744256001",
+            "email": "garcesjefferson1996@gmail.com"
+        },
+        "payment_method": "EFECTIVO",
+        "paid_amount": 4.0,
+        "change": 0.11,
+        "invoice_id": 1,
+        "status": "INVOICED"
     }
 ]

@@ -1,8 +1,11 @@
+from app.models.customer import Customer
+from app.services.invoice_service import generate_invoice
 from app.services.auth_service import login
 from app.services.product_service import (
     list_products,
     create_product,
-    get_products_grouped_by_category
+    get_products_grouped_by_category,
+    toggle_product_status
 )
 from app.services.sale_service import register_sale
 from app.services.expense_service import register_expense
@@ -11,9 +14,11 @@ from app.services.report_service import monthly_report
 from app.services.category_service import create_category, list_categories
 from app.models.sale import Sale
 from app.repositories.sale_repo import get_next_sale_id
-from app.services.product_service import toggle_product_status
 
 
+# =========================
+# VENTAS
+# =========================
 
 def show_products_by_category(grouped_products):
     print("\n☕ MENÚ - THE ALEXANDRA ☕\n")
@@ -60,6 +65,63 @@ def create_sale(index_map):
     return sale
 
 
+def process_payment(sale):
+    print("\n💳 MÉTODO DE PAGO")
+    print("1. Efectivo")
+    print("2. Tarjeta")
+    print("3. Transferencia")
+
+    option = input("Seleccione método: ")
+
+    methods = {
+        "1": "EFECTIVO",
+        "2": "TARJETA",
+        "3": "TRANSFERENCIA"
+    }
+
+    method = methods.get(option)
+    if not method:
+        print("❌ Método inválido")
+        return False
+
+    try:
+        paid = float(input("Monto pagado: $"))
+    except ValueError:
+        print("❌ Monto inválido")
+        return False
+
+    if paid < sale.total:
+        print("❌ El monto no cubre el total")
+        return False
+
+    sale.set_payment(method, paid)
+    print(f"✔ Pago registrado | Vuelto: ${sale.change:.2f}")
+    return True
+
+
+def process_invoice(sale):
+    option = input("\n¿Desea factura? (s/n): ").lower()
+    if option != "s":
+        return
+
+    print("\n🧾 DATOS DEL CLIENTE")
+    name = input("Nombre / Razón social: ")
+    document = input("Cédula o RUC: ")
+    email = input("Email (opcional): ")
+
+    customer = Customer(name, document, email)
+    sale.attach_customer(customer.to_dict())
+
+    invoice = generate_invoice(sale, customer.to_dict())
+    sale.mark_invoiced(invoice.invoice_number)
+
+    print(f"🧾 Factura interna generada N° {invoice.invoice_number}")
+
+
+# =========================
+# MENÚS
+# =========================
+
 def main_menu(is_admin: bool):
     print("\n📋 MENÚ PRINCIPAL")
     print("1. Registrar venta")
@@ -80,9 +142,8 @@ def category_menu(current_user):
         categories = list_categories()
 
         if not categories:
-            print("⚠️ No hay categorías registradas")
+            print("⚠️ No hay categorías")
         else:
-            print("Categorías existentes:")
             for c in categories:
                 print(f"- {c['name']}")
 
@@ -105,9 +166,8 @@ def product_menu(current_user):
 
         products = list_products()
         if not products:
-            print("⚠️ No hay productos registrados")
+            print("⚠️ No hay productos")
         else:
-            print("Productos existentes:")
             for p in products:
                 print(f"- {p.name} (${p.price:.2f})")
 
@@ -127,6 +187,10 @@ def product_menu(current_user):
             print("❌ Opción inválida")
 
 
+# =========================
+# MAIN
+# =========================
+
 def main():
     current_user = login()
     if not current_user:
@@ -140,7 +204,6 @@ def main():
 
         if option == "1":
             grouped = get_products_grouped_by_category()
-
             if not grouped:
                 print("⚠️ No hay productos disponibles")
                 continue
@@ -152,12 +215,25 @@ def main():
                 print("⚠️ Venta cancelada")
                 continue
 
+            if not process_payment(sale):
+                print("⚠️ Pago no registrado. Venta cancelada.")
+                continue
+
+            process_invoice(sale)
+
             register_sale(sale, current_user)
-            print(f"✅ Venta guardada | Total: ${sale.total:.2f}")
+
+            print("\n✅ Venta guardada correctamente")
+            print(f"💵 Total: ${sale.total:.2f}")
+            print(f"💳 Método: {sale.payment_method}")
+            print(f"💰 Pagó: ${sale.paid_amount:.2f}")
+            print(f"🔁 Vuelto: ${sale.change:.2f}")
+
+            if sale.invoice_id:
+                print(f"🧾 Factura N° {sale.invoice_id}")
 
         elif option == "2":
             cashbox = close_daily_cashbox(current_user)
-
             print("\n📊 CIERRE DE CAJA")
             print(f"Total vendido: ${cashbox.total_sales:.2f}")
             print(f"Ahorro Alexandra 💙: ${cashbox.savings:.2f}")
@@ -168,12 +244,11 @@ def main():
 
         elif option == "4" and is_admin:
             report = monthly_report()
-
-            print("\n📊 REPORTE MENSUAL (últimos 30 días)")
-            print(f"Ventas totales:   ${report['total_sales']:.2f}")
-            print(f"Gastos totales:   ${report['total_expenses']:.2f}")
-            print(f"Ahorro (5%):      ${report['savings']:.2f}")
-            print(f"Utilidad neta:    ${report['net_income']:.2f}")
+            print("\n📊 REPORTE MENSUAL")
+            print(f"Ventas:   ${report['total_sales']:.2f}")
+            print(f"Gastos:   ${report['total_expenses']:.2f}")
+            print(f"Ahorro:   ${report['savings']:.2f}")
+            print(f"Utilidad: ${report['net_income']:.2f}")
 
         elif option == "5" and is_admin:
             category_menu(current_user)

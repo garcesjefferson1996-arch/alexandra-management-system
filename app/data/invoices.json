@@ -1,0 +1,16 @@
+[
+  {
+    "invoice_number": 1,
+    "sale_id": 21,
+    "customer": {
+      "name": "Jefferson Garcés",
+      "document": "1804744256001",
+      "email": "garcesjefferson1996@gmail.com"
+    },
+    "subtotal": 3.47,
+    "iva": 0.42,
+    "total": 3.8899999999999997,
+    "date": "2026-01-02T17:10:36.637504",
+    "status": "PENDING_SRI"
+  }
+]

@@ -268,5 +268,41 @@
         "action": "Activó producto",
         "reason": "Jugo de Mora",
         "timestamp": "2026-01-02T13:54:15.811607"
+    },
+    {
+        "user": "admin",
+        "action": "Inicio de sesión",
+        "reason": null,
+        "timestamp": "2026-01-02T13:56:02.989706"
+    },
+    {
+        "user": "admin",
+        "action": "Creó producto",
+        "reason": "Dona ($0.99)",
+        "timestamp": "2026-01-02T13:56:35.034819"
+    },
+    {
+        "user": "admin",
+        "action": "Desactivó producto",
+        "reason": "Jugo de Mora",
+        "timestamp": "2026-01-02T13:56:44.275022"
+    },
+    {
+        "user": "admin",
+        "action": "Inicio de sesión",
+        "reason": null,
+        "timestamp": "2026-01-02T17:09:12.610445"
+    },
+    {
+        "user": "admin",
+        "action": "Creó una venta",
+        "reason": "Venta #21 | Total: $3.89",
+        "timestamp": "2026-01-02T17:10:36.656774"
+    },
+    {
+        "user": "admin",
+        "action": "Activó producto",
+        "reason": "Jugo de Mora",
+        "timestamp": "2026-01-02T17:11:03.148504"
     }
 ]

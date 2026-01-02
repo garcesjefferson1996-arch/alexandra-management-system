@@ -12,5 +12,12 @@
     "price": 2.9,
     "category_id": 3,
     "active": true
+  },
+  {
+    "id": 3,
+    "name": "Dona",
+    "price": 0.99,
+    "category_id": 2,
+    "active": true
   }
 ]
