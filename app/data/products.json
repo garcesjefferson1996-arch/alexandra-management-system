@@ -5,5 +5,12 @@
     "price": 2.5,
     "category_id": 1,
     "active": true
+  },
+  {
+    "id": 2,
+    "name": "The Alexandra",
+    "price": 2.9,
+    "category_id": 3,
+    "active": true
   }
 ]

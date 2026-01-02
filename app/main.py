@@ -1,5 +1,9 @@
 from app.services.auth_service import login
-from app.services.product_service import list_products, create_product
+from app.services.product_service import (
+    list_products,
+    create_product,
+    get_products_grouped_by_category
+)
 from app.services.sale_service import register_sale
 from app.services.expense_service import register_expense
 from app.services.cashbox_service import close_daily_cashbox
@@ -9,13 +13,26 @@ from app.models.sale import Sale
 from app.repositories.sale_repo import get_next_sale_id
 
 
-def show_products(products):
+def show_products_by_category(grouped_products):
     print("\n☕ MENÚ - THE ALEXANDRA ☕\n")
-    for i, product in enumerate(products, start=1):
-        print(f"{i}. {product.name} - ${product.price:.2f}")
+
+    index = 1
+    index_map = {}
+
+    for data in grouped_products.values():
+        if not data["products"]:
+            continue
+
+        print(f"\n📂 {data['name']}")
+        for product in data["products"]:
+            print(f"{index}. {product.name} - ${product.price:.2f}")
+            index_map[index] = product
+            index += 1
+
+    return index_map
 
 
-def create_sale(products):
+def create_sale(index_map):
     sale_id = get_next_sale_id()
     sale = Sale(sale_id)
 
@@ -27,11 +44,15 @@ def create_sale(products):
             if option == 0:
                 break
 
-            product = products[option - 1]
+            product = index_map.get(option)
+            if not product:
+                print("❌ Opción inválida")
+                continue
+
             sale.add_product(product)
             print(f"✔ Agregado: {product.name}")
 
-        except (ValueError, IndexError):
+        except ValueError:
             print("❌ Opción inválida")
 
     return sale
@@ -113,13 +134,14 @@ def main():
         option = input("\nSeleccione una opción: ")
 
         if option == "1":
-            products = list_products()
-            if not products:
-                print("⚠️ No hay productos")
+            grouped = get_products_grouped_by_category()
+
+            if not grouped:
+                print("⚠️ No hay productos disponibles")
                 continue
 
-            show_products(products)
-            sale = create_sale(products)
+            index_map = show_products_by_category(grouped)
+            sale = create_sale(index_map)
 
             if not sale.items:
                 print("⚠️ Venta cancelada")

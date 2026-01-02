@@ -220,5 +220,29 @@
         "action": "Cierre de caja",
         "reason": "Ventas: $113.30 | Gastos: $23.00 | Neto: $84.63",
         "timestamp": "2026-01-02T13:24:15.925561"
+    },
+    {
+        "user": "admin",
+        "action": "Inicio de sesión",
+        "reason": null,
+        "timestamp": "2026-01-02T13:38:58.625232"
+    },
+    {
+        "user": "admin",
+        "action": "Creó categoría",
+        "reason": "Cafes",
+        "timestamp": "2026-01-02T13:39:22.839575"
+    },
+    {
+        "user": "admin",
+        "action": "Creó producto",
+        "reason": "The Alexandra ($2.90)",
+        "timestamp": "2026-01-02T13:40:30.730854"
+    },
+    {
+        "user": "admin",
+        "action": "Creó una venta",
+        "reason": "Venta #20 | Total: $5.40",
+        "timestamp": "2026-01-02T13:41:09.310933"
     }
 ]

@@ -6,6 +6,7 @@ from app.repositories.product_repo import (
 )
 from app.repositories.category_repo import load_categories
 from app.services.audit_service import log_action
+from app.repositories.category_repo import load_categories
 
 
 def list_products():
@@ -31,6 +32,38 @@ def list_products():
         )
 
     return valid_products
+
+def get_products_grouped_by_category():
+    products = load_products()
+    categories = load_categories()
+
+    grouped = {}
+
+    # Inicializar categorías
+    for c in categories:
+        grouped[c["id"]] = {
+            "name": c["name"],
+            "products": []
+        }
+
+    # Asignar productos a su categoría
+    for p in products:
+        if not p.get("active", True):
+            continue
+
+        category_id = p.get("category_id")
+        if category_id in grouped:
+            grouped[category_id]["products"].append(
+                Product(
+                    p["id"],
+                    p["name"],
+                    p["price"],
+                    p["category_id"],
+                    p.get("active", True)
+                )
+            )
+
+    return grouped
 
 
 def create_product(current_user):

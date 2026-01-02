@@ -311,5 +311,20 @@
         ],
         "total": 2.5,
         "timestamp": "2026-01-02T13:24:03.663900"
+    },
+    {
+        "sale_id": 20,
+        "items": [
+            {
+                "name": "The Alexandra",
+                "price": 2.9
+            },
+            {
+                "name": "Jugo de Mora",
+                "price": 2.5
+            }
+        ],
+        "total": 5.4,
+        "timestamp": "2026-01-02T13:40:54.275460"
     }
 ]
