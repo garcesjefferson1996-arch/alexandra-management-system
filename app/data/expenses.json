@@ -19,5 +19,12 @@
     "description": "leche",
     "user": "admin",
     "timestamp": "2026-01-01T19:42:28.094953"
+  },
+  {
+    "amount": 1.0,
+    "category": "Insumos",
+    "description": "azucar",
+    "user": "admin",
+    "timestamp": "2026-01-01T22:14:23.026430"
   }
 ]

@@ -285,5 +285,20 @@
             }
         ],
         "total": 4.4
+    },
+    {
+        "sale_id": 18,
+        "items": [
+            {
+                "name": "Café The Alexandra",
+                "price": 2.9
+            },
+            {
+                "name": "Café The Alexandra",
+                "price": 2.9
+            }
+        ],
+        "total": 5.8,
+        "timestamp": "2026-01-01T22:13:57.182692"
     }
 ]
