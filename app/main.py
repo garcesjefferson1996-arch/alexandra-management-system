@@ -1,12 +1,12 @@
 from app.services.auth_service import login
-from app.services.product_service import list_products
+from app.services.product_service import list_products, create_product
 from app.services.sale_service import register_sale
 from app.services.expense_service import register_expense
 from app.services.cashbox_service import close_daily_cashbox
 from app.services.report_service import monthly_report
+from app.services.category_service import create_category, list_categories
 from app.models.sale import Sale
 from app.repositories.sale_repo import get_next_sale_id
-from app.services.category_service import create_category, list_categories
 
 
 def show_products(products):
@@ -46,6 +46,7 @@ def main_menu(is_admin: bool):
         print("3. Registrar gasto (ADMIN)")
         print("4. Reporte mensual (ADMIN)")
         print("5. Gestionar categorías (ADMIN)")
+        print("6. Gestionar productos (ADMIN)")
 
     print("0. Salir")
 
@@ -69,6 +70,31 @@ def category_menu(current_user):
 
         if option == "1":
             create_category(current_user)
+        elif option == "0":
+            break
+        else:
+            print("❌ Opción inválida")
+
+
+def product_menu(current_user):
+    while True:
+        print("\n📦 GESTIÓN DE PRODUCTOS")
+
+        products = list_products()
+        if not products:
+            print("⚠️ No hay productos registrados")
+        else:
+            print("Productos existentes:")
+            for p in products:
+                print(f"- {p.name} (${p.price:.2f})")
+
+        print("\n1. Agregar producto")
+        print("0. Volver")
+
+        option = input("Seleccione una opción: ")
+
+        if option == "1":
+            create_product(current_user)
         elif option == "0":
             break
         else:
@@ -124,6 +150,9 @@ def main():
 
         elif option == "5" and is_admin:
             category_menu(current_user)
+
+        elif option == "6" and is_admin:
+            product_menu(current_user)
 
         elif option == "0":
             print("👋 Hasta luego")

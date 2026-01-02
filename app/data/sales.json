@@ -300,5 +300,16 @@
         ],
         "total": 5.8,
         "timestamp": "2026-01-01T22:13:57.182692"
+    },
+    {
+        "sale_id": 19,
+        "items": [
+            {
+                "name": "Jugo de Mora",
+                "price": 2.5
+            }
+        ],
+        "total": 2.5,
+        "timestamp": "2026-01-02T13:24:03.663900"
     }
 ]

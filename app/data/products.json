@@ -1,4 +1,9 @@
 [
-  { "id": 1, "name": "Café The Alexandra", "price": 2.9 },
-  { "id": 2, "name": "Café Americano", "price": 1.5 }
+  {
+    "id": 1,
+    "name": "Jugo de Mora",
+    "price": 2.5,
+    "category_id": 1,
+    "active": true
+  }
 ]

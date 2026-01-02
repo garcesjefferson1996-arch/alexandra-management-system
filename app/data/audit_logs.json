@@ -184,5 +184,41 @@
         "action": "Creó categoría",
         "reason": "Bebidas",
         "timestamp": "2026-01-02T13:07:14.869962"
+    },
+    {
+        "user": "admin",
+        "action": "Inicio de sesión",
+        "reason": null,
+        "timestamp": "2026-01-02T13:17:04.604682"
+    },
+    {
+        "user": "admin",
+        "action": "Creó categoría",
+        "reason": "Postres",
+        "timestamp": "2026-01-02T13:17:26.067924"
+    },
+    {
+        "user": "admin",
+        "action": "Inicio de sesión",
+        "reason": null,
+        "timestamp": "2026-01-02T13:23:14.357199"
+    },
+    {
+        "user": "admin",
+        "action": "Creó producto",
+        "reason": "Jugo de Mora ($2.50)",
+        "timestamp": "2026-01-02T13:23:46.982163"
+    },
+    {
+        "user": "admin",
+        "action": "Creó una venta",
+        "reason": "Venta #19 | Total: $2.50",
+        "timestamp": "2026-01-02T13:24:09.541631"
+    },
+    {
+        "user": "admin",
+        "action": "Cierre de caja",
+        "reason": "Ventas: $113.30 | Gastos: $23.00 | Neto: $84.63",
+        "timestamp": "2026-01-02T13:24:15.925561"
     }
 ]
