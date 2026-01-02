@@ -172,5 +172,17 @@
         "action": "Registró un gasto",
         "reason": "Insumos | $1.00 | azucar",
         "timestamp": "2026-01-01T22:14:23.029414"
+    },
+    {
+        "user": "admin",
+        "action": "Inicio de sesión",
+        "reason": null,
+        "timestamp": "2026-01-02T13:06:45.902780"
+    },
+    {
+        "user": "admin",
+        "action": "Creó categoría",
+        "reason": "Bebidas",
+        "timestamp": "2026-01-02T13:07:14.869962"
     }
 ]

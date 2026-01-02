@@ -6,6 +6,7 @@ from app.services.cashbox_service import close_daily_cashbox
 from app.services.report_service import monthly_report
 from app.models.sale import Sale
 from app.repositories.sale_repo import get_next_sale_id
+from app.services.category_service import create_category, list_categories
 
 
 def show_products(products):
@@ -44,8 +45,34 @@ def main_menu(is_admin: bool):
     if is_admin:
         print("3. Registrar gasto (ADMIN)")
         print("4. Reporte mensual (ADMIN)")
+        print("5. Gestionar categorías (ADMIN)")
 
     print("0. Salir")
+
+
+def category_menu(current_user):
+    while True:
+        print("\n📂 GESTIÓN DE CATEGORÍAS")
+        categories = list_categories()
+
+        if not categories:
+            print("⚠️ No hay categorías registradas")
+        else:
+            print("Categorías existentes:")
+            for c in categories:
+                print(f"- {c['name']}")
+
+        print("\n1. Agregar categoría")
+        print("0. Volver")
+
+        option = input("Seleccione una opción: ")
+
+        if option == "1":
+            create_category(current_user)
+        elif option == "0":
+            break
+        else:
+            print("❌ Opción inválida")
 
 
 def main():
@@ -94,6 +121,9 @@ def main():
             print(f"Gastos totales:   ${report['total_expenses']:.2f}")
             print(f"Ahorro (5%):      ${report['savings']:.2f}")
             print(f"Utilidad neta:    ${report['net_income']:.2f}")
+
+        elif option == "5" and is_admin:
+            category_menu(current_user)
 
         elif option == "0":
             print("👋 Hasta luego")
