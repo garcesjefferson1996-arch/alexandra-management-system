@@ -2,8 +2,8 @@ from datetime import datetime
 
 
 class AuditLog:
-    def __init__(self, user, action, reason=""):
-        self.user = user
+    def __init__(self, user, action, reason=None):
+        self.user = user.username
         self.action = action
         self.reason = reason
         self.timestamp = datetime.now().isoformat()

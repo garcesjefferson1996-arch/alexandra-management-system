@@ -1,12 +1,14 @@
 from app.services.auth_service import login
 from app.services.product_service import list_products
 from app.services.sale_service import register_sale
+from app.services.expense_service import register_expense
 from app.services.cashbox_service import close_daily_cashbox
+from app.services.report_service import monthly_report
 from app.models.sale import Sale
 from app.repositories.sale_repo import get_next_sale_id
 
 
-def show_menu(products):
+def show_products(products):
     print("\n☕ MENÚ - THE ALEXANDRA ☕\n")
     for i, product in enumerate(products, start=1):
         print(f"{i}. {product.name} - ${product.price:.2f}")
@@ -21,18 +23,29 @@ def create_sale(products):
     while True:
         try:
             option = int(input("Producto #: "))
-
             if option == 0:
                 break
 
-            selected_product = products[option - 1]
-            sale.add_product(selected_product)
-            print(f"✔ Agregado: {selected_product.name}")
+            product = products[option - 1]
+            sale.add_product(product)
+            print(f"✔ Agregado: {product.name}")
 
         except (ValueError, IndexError):
-            print("❌ Opción inválida. Intenta nuevamente.")
+            print("❌ Opción inválida")
 
     return sale
+
+
+def main_menu(is_admin: bool):
+    print("\n📋 MENÚ PRINCIPAL")
+    print("1. Registrar venta")
+    print("2. Cierre de caja")
+
+    if is_admin:
+        print("3. Registrar gasto (ADMIN)")
+        print("4. Reporte mensual (ADMIN)")
+
+    print("0. Salir")
 
 
 def main():
@@ -40,32 +53,54 @@ def main():
     if not current_user:
         return
 
-    products = list_products()
+    is_admin = current_user.role == "admin"
 
-    if not products:
-        print("⚠️ No hay productos registrados.")
-        return
+    while True:
+        main_menu(is_admin)
+        option = input("\nSeleccione una opción: ")
 
-    show_menu(products)
+        if option == "1":
+            products = list_products()
+            if not products:
+                print("⚠️ No hay productos")
+                continue
 
-    sale = create_sale(products)
+            show_products(products)
+            sale = create_sale(products)
 
-    if not sale.items:
-        print("\n⚠️ Venta cancelada (sin productos).")
-        return
+            if not sale.items:
+                print("⚠️ Venta cancelada")
+                continue
 
-    register_sale(sale, current_user)
+            register_sale(sale, current_user)
+            print(f"✅ Venta guardada | Total: ${sale.total:.2f}")
 
+        elif option == "2":
+            cashbox = close_daily_cashbox(current_user)
 
-    print(f"\n✅ Venta guardada correctamente")
-    print(f"💵 Total venta: ${sale.total:.2f}")
+            print("\n📊 CIERRE DE CAJA")
+            print(f"Total vendido: ${cashbox.total_sales:.2f}")
+            print(f"Ahorro Alexandra 💙: ${cashbox.savings:.2f}")
+            print(f"Ingreso neto: ${cashbox.net_income:.2f}")
 
-    cashbox = close_daily_cashbox()
+        elif option == "3" and is_admin:
+            register_expense(current_user)
 
-    print("\n📊 CIERRE DE CAJA DEL DÍA")
-    print(f"Total vendido: ${cashbox.total_sales:.2f}")
-    print(f"Ahorro Alexandra 💙: ${cashbox.savings:.2f}")
-    print(f"Ingreso neto: ${cashbox.net_income:.2f}")
+        elif option == "4" and is_admin:
+            report = monthly_report()
+
+            print("\n📊 REPORTE MENSUAL (últimos 30 días)")
+            print(f"Ventas totales:   ${report['total_sales']:.2f}")
+            print(f"Gastos totales:   ${report['total_expenses']:.2f}")
+            print(f"Ahorro (5%):      ${report['savings']:.2f}")
+            print(f"Utilidad neta:    ${report['net_income']:.2f}")
+
+        elif option == "0":
+            print("👋 Hasta luego")
+            break
+
+        else:
+            print("❌ Opción inválida")
 
 
 if __name__ == "__main__":

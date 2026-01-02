@@ -1,14 +1,158 @@
 [
     {
         "user": "admin",
-        "action": "Creó una venta",
-        "reason": "Venta #9 | Total: $2.90",
-        "timestamp": "2025-12-26T12:05:15.278157"
+        "action": "Inicio de sesión",
+        "reason": null,
+        "timestamp": "2025-12-28T17:18:28.167376"
     },
     {
         "user": "admin",
         "action": "Creó una venta",
-        "reason": "Venta #10 | Total: $4.40",
-        "timestamp": "2025-12-27T16:23:20.210806"
+        "reason": "Venta #11 | Total: $4.40",
+        "timestamp": "2025-12-28T17:18:35.689507"
+    },
+    {
+        "user": "admin",
+        "action": "Inicio de sesión",
+        "reason": null,
+        "timestamp": "2025-12-28T17:22:17.609226"
+    },
+    {
+        "user": "admin",
+        "action": "Inicio de sesión",
+        "reason": null,
+        "timestamp": "2025-12-28T17:23:22.328066"
+    },
+    {
+        "user": "admin",
+        "action": "Creó una venta",
+        "reason": "Venta #12 | Total: $2.90",
+        "timestamp": "2025-12-28T17:23:25.937620"
+    },
+    {
+        "user": "admin",
+        "action": "Inicio de sesión",
+        "reason": null,
+        "timestamp": "2025-12-31T12:37:05.146685"
+    },
+    {
+        "user": "admin",
+        "action": "Creó una venta",
+        "reason": "Venta #13 | Total: $10.20",
+        "timestamp": "2025-12-31T12:37:15.188091"
+    },
+    {
+        "user": "admin",
+        "action": "Inicio de sesión",
+        "reason": null,
+        "timestamp": "2026-01-01T17:54:57.066102"
+    },
+    {
+        "user": "admin",
+        "action": "Creó una venta",
+        "reason": "Venta #14 | Total: $2.90",
+        "timestamp": "2026-01-01T17:55:07.953059"
+    },
+    {
+        "user": "admin",
+        "action": "Inicio de sesión",
+        "reason": null,
+        "timestamp": "2026-01-01T17:58:01.524174"
+    },
+    {
+        "user": "admin",
+        "action": "Creó una venta",
+        "reason": "Venta #15 | Total: $2.90",
+        "timestamp": "2026-01-01T17:58:06.028854"
+    },
+    {
+        "user": "admin",
+        "action": "Cierre de caja",
+        "reason": "Ventas: $97.70 | Gastos: $0.00 | Neto: $92.81",
+        "timestamp": "2026-01-01T17:58:06.044503"
+    },
+    {
+        "user": "admin",
+        "action": "Inicio de sesión",
+        "reason": null,
+        "timestamp": "2026-01-01T18:15:12.272889"
+    },
+    {
+        "user": "admin",
+        "action": "Creó una venta",
+        "reason": "Venta #16 | Total: $2.90",
+        "timestamp": "2026-01-01T18:15:20.706477"
+    },
+    {
+        "user": "admin",
+        "action": "Cierre de caja",
+        "reason": "Ventas: $100.60 | Gastos: $0.00 | Neto: $95.57",
+        "timestamp": "2026-01-01T18:15:20.706477"
+    },
+    {
+        "user": "admin",
+        "action": "Inicio de sesión",
+        "reason": null,
+        "timestamp": "2026-01-01T19:26:15.821553"
+    },
+    {
+        "user": "admin",
+        "action": "Inicio de sesión",
+        "reason": null,
+        "timestamp": "2026-01-01T19:29:52.905489"
+    },
+    {
+        "user": "admin",
+        "action": "Inicio de sesión",
+        "reason": null,
+        "timestamp": "2026-01-01T19:36:51.912826"
+    },
+    {
+        "user": "admin",
+        "action": "Registró un gasto",
+        "reason": "Transporte | $10.00 | delivery",
+        "timestamp": "2026-01-01T19:37:15.732846"
+    },
+    {
+        "user": "admin",
+        "action": "Cierre de caja",
+        "reason": "Ventas: $100.60 | Gastos: $20.00 | Neto: $75.57",
+        "timestamp": "2026-01-01T19:37:26.068170"
+    },
+    {
+        "user": "admin",
+        "action": "Inicio de sesión",
+        "reason": null,
+        "timestamp": "2026-01-01T19:41:06.214735"
+    },
+    {
+        "user": "admin",
+        "action": "Creó una venta",
+        "reason": "Venta #17 | Total: $4.40",
+        "timestamp": "2026-01-01T19:42:03.494755"
+    },
+    {
+        "user": "admin",
+        "action": "Registró un gasto",
+        "reason": "Insumos | $2.00 | leche",
+        "timestamp": "2026-01-01T19:42:28.094953"
+    },
+    {
+        "user": "admin",
+        "action": "Inicio de sesión",
+        "reason": null,
+        "timestamp": "2026-01-01T20:55:50.977529"
+    },
+    {
+        "user": "admin",
+        "action": "Inicio de sesión",
+        "reason": null,
+        "timestamp": "2026-01-01T20:59:28.794750"
+    },
+    {
+        "user": "admin",
+        "action": "Inicio de sesión",
+        "reason": null,
+        "timestamp": "2026-01-01T21:28:01.058364"
     }
 ]

@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "amount": 10.0,
+    "category": "Insumos",
+    "description": "cafe",
+    "user": "admin",
+    "timestamp": "2026-01-01T19:30:37.036025"
+  },
+  {
+    "amount": 10.0,
+    "category": "Transporte",
+    "description": "delivery",
+    "user": "admin",
+    "timestamp": "2026-01-01T19:37:15.717059"
+  },
+  {
+    "amount": 2.0,
+    "category": "Insumos",
+    "description": "leche",
+    "user": "admin",
+    "timestamp": "2026-01-01T19:42:28.094953"
+  }
+]

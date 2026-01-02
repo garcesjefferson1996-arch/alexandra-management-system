@@ -18,9 +18,6 @@ def add_product_to_sale(sale, product):
 
 
 def register_sale(sale, user):
-    """
-    Guarda la venta en el sistema y registra auditoría
-    """
     save_sale(sale)
 
     log_action(
@@ -47,5 +44,10 @@ def delete_sale(sale_id, user):
 
     save_all_sales(sales)
 
-    log_action(user, f"Eliminó venta #{sale_id}", reason)
+    log_action(
+        user,
+        "Eliminó una venta",
+        f"Venta #{sale_id} | Motivo: {reason}"
+    )
+
     print("✅ Venta eliminada y registrada.")
