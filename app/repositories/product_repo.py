@@ -23,3 +23,13 @@ def get_next_product_id() -> int:
     if not products:
         return 1
     return max(p["id"] for p in products) + 1
+
+def update_product(product_id: int, active: bool):
+    products = load_products()
+
+    for p in products:
+        if p["id"] == product_id:
+            p["active"] = active
+            break
+
+    save_all_products(products)

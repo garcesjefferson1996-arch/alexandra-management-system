@@ -11,6 +11,8 @@ from app.services.report_service import monthly_report
 from app.services.category_service import create_category, list_categories
 from app.models.sale import Sale
 from app.repositories.sale_repo import get_next_sale_id
+from app.services.product_service import toggle_product_status
+
 
 
 def show_products_by_category(grouped_products):
@@ -110,12 +112,15 @@ def product_menu(current_user):
                 print(f"- {p.name} (${p.price:.2f})")
 
         print("\n1. Agregar producto")
+        print("2. Activar / Desactivar producto")
         print("0. Volver")
 
         option = input("Seleccione una opción: ")
 
         if option == "1":
             create_product(current_user)
+        elif option == "2":
+            toggle_product_status(current_user)
         elif option == "0":
             break
         else:

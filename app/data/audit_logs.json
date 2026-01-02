@@ -244,5 +244,29 @@
         "action": "Creó una venta",
         "reason": "Venta #20 | Total: $5.40",
         "timestamp": "2026-01-02T13:41:09.310933"
+    },
+    {
+        "user": "admin",
+        "action": "Inicio de sesión",
+        "reason": null,
+        "timestamp": "2026-01-02T13:49:34.163527"
+    },
+    {
+        "user": "admin",
+        "action": "Inicio de sesión",
+        "reason": null,
+        "timestamp": "2026-01-02T13:53:45.614617"
+    },
+    {
+        "user": "admin",
+        "action": "Desactivó producto",
+        "reason": "Jugo de Mora",
+        "timestamp": "2026-01-02T13:54:05.415176"
+    },
+    {
+        "user": "admin",
+        "action": "Activó producto",
+        "reason": "Jugo de Mora",
+        "timestamp": "2026-01-02T13:54:15.811607"
     }
 ]

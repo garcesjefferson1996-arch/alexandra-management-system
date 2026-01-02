@@ -7,6 +7,8 @@ from app.repositories.product_repo import (
 from app.repositories.category_repo import load_categories
 from app.services.audit_service import log_action
 from app.repositories.category_repo import load_categories
+from app.repositories.product_repo import update_product
+
 
 
 def list_products():
@@ -120,3 +122,43 @@ def create_product(current_user):
     )
 
     print("✅ Producto creado correctamente")
+
+
+def toggle_product_status(current_user):
+    if current_user.role != "admin":
+        print("❌ Solo ADMIN puede modificar productos")
+        return
+
+    products = load_products()
+    if not products:
+        print("⚠️ No hay productos")
+        return
+
+    print("\n📦 PRODUCTOS:")
+    for p in products:
+        status = "✅ Activo" if p.get("active", True) else "❌ Inactivo"
+        print(f"{p['id']}. {p['name']} - {status}")
+
+    try:
+        product_id = int(input("ID del producto: "))
+    except ValueError:
+        print("❌ ID inválido")
+        return
+
+    for p in products:
+        if p["id"] == product_id:
+            new_status = not p.get("active", True)
+            update_product(product_id, new_status)
+
+            action = "Activó producto" if new_status else "Desactivó producto"
+
+            log_action(
+                user=current_user,
+                action=action,
+                reason=p["name"]
+            )
+
+            print(f"✅ Producto {'activado' if new_status else 'desactivado'}")
+            return
+
+    print("❌ Producto no encontrado")
