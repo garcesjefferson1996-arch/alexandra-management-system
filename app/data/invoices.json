@@ -12,5 +12,33 @@
     "total": 3.8899999999999997,
     "date": "2026-01-02T17:10:36.637504",
     "status": "PENDING_SRI"
+  },
+  {
+    "invoice_number": 2,
+    "sale_id": 24,
+    "customer": {
+      "name": "Jefferson Garces",
+      "document": "1804744256001",
+      "email": "garcesjefferson1996@gmail.com"
+    },
+    "subtotal": 0.88,
+    "iva": 0.11,
+    "total": 0.99,
+    "date": "2026-01-03T11:11:49.395187",
+    "status": "PENDING_SRI"
+  },
+  {
+    "invoice_number": 3,
+    "sale_id": 25,
+    "customer": {
+      "name": "Jefferson Garces",
+      "document": "1804744256001",
+      "email": "garcesjefferson1996@gmail.com"
+    },
+    "subtotal": 2.59,
+    "iva": 0.31,
+    "total": 2.9,
+    "date": "2026-01-03T11:19:16.455377",
+    "status": "PENDING_SRI"
   }
 ]

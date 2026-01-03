@@ -351,5 +351,144 @@
         "change": 0.11,
         "invoice_id": 1,
         "status": "INVOICED"
+    },
+    {
+        "sale_id": 22,
+        "items": [
+            {
+                "name": "Jugo de Mora",
+                "price": 2.5
+            },
+            {
+                "name": "The Alexandra",
+                "price": 2.9
+            }
+        ],
+        "total": 5.4,
+        "timestamp": "2026-01-03T10:39:02.082083",
+        "customer": null,
+        "payment_method": null,
+        "paid_amount": 0.0,
+        "change": 0.0,
+        "invoice_id": null,
+        "status": "DRAFT"
+    },
+    {
+        "sale_id": 23,
+        "items": [
+            {
+                "name": "Jugo de Mora",
+                "price": 2.5
+            }
+        ],
+        "total": 2.5,
+        "timestamp": "2026-01-03T11:08:30.085188",
+        "customer": null,
+        "payment_method": null,
+        "paid_amount": 0.0,
+        "change": 0.0,
+        "invoice_id": null,
+        "status": "DRAFT"
+    },
+    {
+        "sale_id": 24,
+        "items": [
+            {
+                "name": "Dona",
+                "price": 0.99
+            }
+        ],
+        "total": 0.99,
+        "timestamp": "2026-01-03T11:10:52.947009",
+        "customer": {
+            "name": "Jefferson Garces",
+            "document": "1804744256001",
+            "email": "garcesjefferson1996@gmail.com"
+        },
+        "payment_method": "TRANSFERENCIA",
+        "paid_amount": 0.99,
+        "change": 0.0,
+        "invoice_id": 2,
+        "status": "INVOICED"
+    },
+    {
+        "sale_id": 25,
+        "items": [
+            {
+                "name": "The Alexandra",
+                "price": 2.9
+            }
+        ],
+        "total": 2.9,
+        "timestamp": "2026-01-03T11:18:35.436644",
+        "customer": null,
+        "payment_method": null,
+        "paid_amount": 0.0,
+        "change": 0.0,
+        "invoice_id": null,
+        "status": "DRAFT"
+    },
+    {
+        "sale_id": 25,
+        "items": [
+            {
+                "name": "The Alexandra",
+                "price": 2.9
+            }
+        ],
+        "total": 2.9,
+        "timestamp": "2026-01-03T11:18:35.436644",
+        "customer": {
+            "name": "Jefferson Garces",
+            "document": "1804744256001",
+            "email": "garcesjefferson1996@gmail.com"
+        },
+        "payment_method": "TRANSFERENCIA",
+        "paid_amount": 2.9,
+        "change": 0.0,
+        "invoice_id": 3,
+        "status": "INVOICED"
+    },
+    {
+        "sale_id": 27,
+        "items": [
+            {
+                "name": "Café Ivanchos",
+                "price": 2.5
+            },
+            {
+                "name": "Dona",
+                "price": 0.99
+            }
+        ],
+        "total": 3.49,
+        "timestamp": "2026-01-03T13:51:34.147891",
+        "customer": null,
+        "payment_method": null,
+        "paid_amount": 0.0,
+        "change": 0.0,
+        "invoice_id": null,
+        "status": "DRAFT"
+    },
+    {
+        "sale_id": 27,
+        "items": [
+            {
+                "name": "Café Ivanchos",
+                "price": 2.5
+            },
+            {
+                "name": "Dona",
+                "price": 0.99
+            }
+        ],
+        "total": 3.49,
+        "timestamp": "2026-01-03T13:51:34.147891",
+        "customer": null,
+        "payment_method": "EFECTIVO",
+        "paid_amount": 5.0,
+        "change": 1.51,
+        "invoice_id": null,
+        "status": "DRAFT"
     }
 ]

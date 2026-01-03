@@ -1,0 +1,74 @@
+[
+  {
+    "order_id": 1,
+    "type": "TAKEAWAY",
+    "table_id": null,
+    "customer": null,
+    "items": [
+      {
+        "name": "Jugo de Mora",
+        "price": 2.5
+      },
+      {
+        "name": "The Alexandra",
+        "price": 2.9
+      }
+    ],
+    "total": 5.4,
+    "status": "CLOSED",
+    "timestamp": "2026-01-03T10:31:36.281316"
+  },
+  {
+    "order_id": 2,
+    "type": "TAKEAWAY",
+    "table_id": null,
+    "customer": null,
+    "items": [
+      {
+        "name": "Jugo de Mora",
+        "price": 2.5
+      }
+    ],
+    "total": 2.5,
+    "status": "CLOSED",
+    "timestamp": "2026-01-03T11:08:14.778288"
+  },
+  {
+    "order_id": 3,
+    "type": "DELIVERY",
+    "table_id": null,
+    "customer": {
+      "name": "Jeff",
+      "phone": "0996547046",
+      "address": "Ambato-Huachi Chico"
+    },
+    "items": [
+      {
+        "name": "The Alexandra",
+        "price": 2.9
+      }
+    ],
+    "total": 2.9,
+    "status": "CLOSED",
+    "timestamp": "2026-01-03T11:18:20.916734"
+  },
+  {
+    "order_id": 4,
+    "type": "DINE_IN",
+    "table_id": 1,
+    "customer": null,
+    "items": [
+      {
+        "name": "Café Ivanchos",
+        "price": 2.5
+      },
+      {
+        "name": "Dona",
+        "price": 0.99
+      }
+    ],
+    "total": 3.49,
+    "status": "CLOSED",
+    "timestamp": "2026-01-03T12:53:32.469957"
+  }
+]

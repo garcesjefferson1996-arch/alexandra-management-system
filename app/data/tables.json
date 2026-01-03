@@ -1,0 +1,22 @@
+[
+  {
+    "table_id": 1,
+    "name": "Mesa 1",
+    "status": "FREE"
+  },
+  {
+    "table_id": 2,
+    "name": "Mesa 2",
+    "status": "FREE"
+  },
+  {
+    "table_id": 3,
+    "name": "Mesa 3",
+    "status": "FREE"
+  },
+  {
+    "table_id": 4,
+    "name": "Mesa 4",
+    "status": "FREE"
+  }
+]

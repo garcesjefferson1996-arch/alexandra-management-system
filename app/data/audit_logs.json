@@ -304,5 +304,119 @@
         "action": "Activó producto",
         "reason": "Jugo de Mora",
         "timestamp": "2026-01-02T17:11:03.148504"
+    },
+    {
+        "user": "system",
+        "action": "Creó una venta",
+        "reason": "Venta #22 | Total: $5.40",
+        "timestamp": "2026-01-03T10:39:02.084462"
+    },
+    {
+        "user": "admin",
+        "action": "Inicio de sesión",
+        "reason": null,
+        "timestamp": "2026-01-03T11:07:27.024396"
+    },
+    {
+        "user": "system",
+        "action": "Creó una venta",
+        "reason": "Venta #23 | Total: $2.50",
+        "timestamp": "2026-01-03T11:08:30.100924"
+    },
+    {
+        "user": "admin",
+        "action": "Inicio de sesión",
+        "reason": null,
+        "timestamp": "2026-01-03T11:10:45.794782"
+    },
+    {
+        "user": "admin",
+        "action": "Creó una venta",
+        "reason": "Venta #24 | Total: $0.99",
+        "timestamp": "2026-01-03T11:11:49.407858"
+    },
+    {
+        "user": "admin",
+        "action": "Inicio de sesión",
+        "reason": null,
+        "timestamp": "2026-01-03T11:17:38.370991"
+    },
+    {
+        "user": "system",
+        "action": "Creó una venta",
+        "reason": "Venta #25 | Total: $2.90",
+        "timestamp": "2026-01-03T11:18:35.455113"
+    },
+    {
+        "user": "admin",
+        "action": "Creó una venta",
+        "reason": "Venta #25 | Total: $2.90",
+        "timestamp": "2026-01-03T11:19:16.455377"
+    },
+    {
+        "user": "admin",
+        "action": "Creó producto",
+        "reason": "Café Ivanchos ($2.50)",
+        "timestamp": "2026-01-03T11:19:45.250418"
+    },
+    {
+        "user": "admin",
+        "action": "Inicio de sesión",
+        "reason": null,
+        "timestamp": "2026-01-03T12:12:14.441332"
+    },
+    {
+        "user": "admin",
+        "action": "Inicio de sesión",
+        "reason": null,
+        "timestamp": "2026-01-03T12:39:34.082610"
+    },
+    {
+        "user": "admin",
+        "action": "Inicio de sesión",
+        "reason": null,
+        "timestamp": "2026-01-03T12:52:49.246921"
+    },
+    {
+        "user": "admin",
+        "action": "Creó mesa",
+        "reason": "Mesa 2",
+        "timestamp": "2026-01-03T12:53:08.769240"
+    },
+    {
+        "user": "admin",
+        "action": "Creó mesa",
+        "reason": "Mesa 3",
+        "timestamp": "2026-01-03T12:53:18.213611"
+    },
+    {
+        "user": "admin",
+        "action": "Creó mesa",
+        "reason": "Mesa 4",
+        "timestamp": "2026-01-03T12:54:25.696056"
+    },
+    {
+        "user": "admin",
+        "action": "Inicio de sesión",
+        "reason": null,
+        "timestamp": "2026-01-03T13:36:30.526992"
+    },
+    {
+        "user": "admin",
+        "action": "Inicio de sesión",
+        "reason": null,
+        "timestamp": "2026-01-03T13:50:48.831115"
+    },
+    {
+        "user": "system",
+        "action": "Creó una venta",
+        "reason": "Venta #27 | Total: $3.49",
+        "timestamp": "2026-01-03T13:51:34.150935"
+    },
+    {
+        "user": "admin",
+        "action": "Creó una venta",
+        "reason": "Venta #27 | Total: $3.49",
+        "timestamp": "2026-01-03T13:51:57.416573"
     }
 ]
